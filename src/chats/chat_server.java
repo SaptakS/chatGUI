@@ -123,7 +123,7 @@ public class chat_server extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             String msgout = "";
-            msgout = msg_area.getText() + "\n\t\tServer:  " + msg_text.getText().trim();
+            msgout = msg_area.getText() + "\nServer:  " + msg_text.getText().trim();
             msg_area.setText(msgout);
             msg_text.setText("");
             dout.writeUTF(msgout); //sending the sever message to the client.
@@ -178,10 +178,7 @@ public class chat_server extends javax.swing.JFrame {
             
             while(!msgin.equals("exit")){
                 msgin = din.readUTF();
-                System.out.println("Before:"+msgin);
-                msgin = msgin.replace("\n\t\tClient:  ","\nClient:  ");
-                msgin = msgin.replace("\nServer:  ","\n\t\tServer:  ");
-                System.out.println("after:"+msgin);
+                
                 msg_area.setText(msgin); // displaying the messge.. from client.
             }
             
