@@ -113,7 +113,7 @@ public class chat_client extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             String msgout = "";
-            msgout = msg_area.getText() + "\n\t\tClient:  " + msg_text.getText().trim();
+            msgout = msg_area.getText() + "\nClient:  " + msg_text.getText().trim();
             msg_area.setText(msgout);
             msg_text.setText("");
             dout.writeUTF(msgout);
@@ -164,10 +164,6 @@ public class chat_client extends javax.swing.JFrame {
             String msgin="";
             while(!msgin.equals("exit")){
                 msgin = din.readUTF();
-                System.out.println("Before:"+msgin);
-                msgin = msgin.replace("\n\t\tServer:  ","\nServer:  ");
-                msgin = msgin.replace("\nClient:  ","\n\t\tClient:  ");
-                System.out.println("After"+msgin);
                 msg_area.setText(msgin);
                 
             }
